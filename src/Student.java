@@ -7,10 +7,12 @@ public class Student {
     private int studentId;
     private String courses;
     private int tuitionBalance;
-    private int costOfCourse = 600; 
+    private static int costOfCourse = 600;
+    private static int id = 1000;
 
     // Constructor prompt user to enter Student's name and year 
     public Student() {
+        
         Scanner in = new Scanner(System.in);
         System.out.print("Enter Student first name: ");
         this.firstName = in.nextLine();
@@ -20,12 +22,24 @@ public class Student {
 
         System.out.print("1 - Freshmen\n2 - Sophomore\n3 - Junior\n4 - Senior\n Enter Student class level: ");
         this.gradeYear = in.nextInt();
+        
+        setStudentID();
 
-        System.out.println(firstName + " " + lastName + " - " + gradeYear);
+       
+
+        System.out.println(firstName + " " + lastName + " - " + gradeYear + " " + studentId);
 
     }
 
     // Generate ID beginning with their year
+    private void setStudentID() {
+        // GradeLevel + ID
+        id++;
+        String x = String.valueOf(gradeYear) + String.valueOf(id);
+        this.studentId = Integer.parseInt(x);
+
+        
+    }
 
     // Enroll in courses
 
