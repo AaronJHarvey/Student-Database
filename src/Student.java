@@ -7,7 +7,7 @@ public class Student {
     private int studentId;
     private String courses;
     private int tuitionBalance;
-    private int costOfBalance; 
+    private int costOfCourse = 600; 
 
     // Constructor prompt user to enter Student's name and year 
     public Student() {
