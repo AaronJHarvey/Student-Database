@@ -1,5 +1,9 @@
 public class StudentDatabaseApp {
-     // Ask how many students should be created 
+
+    public static void main(String[] args) {
+        Student stu1 = new Student();
+    }
+    // Ask how many students should be created 
 
     //Create a new Student * n number of new students - Ask the students Name and Grade/Year
     
