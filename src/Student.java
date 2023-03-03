@@ -1,7 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Student {
@@ -49,7 +48,6 @@ public class Student {
     public void enroll() {
         // Enter a loop, user hits 0 when finished 
         ArrayList<String> enrolledCourses = new ArrayList<String>();
-        String course;
         
         do {
             System.out.print("Enter course to enroll (Q for quit): ");
