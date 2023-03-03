@@ -108,8 +108,8 @@ public class Student {
         courseStr = courseStr.replaceAll("\\[", "").replaceAll("\\]","").replaceAll(", ","\n");
         tuitionBalance = costOfCourse * courses.length;
         
-        System.out.println(courseStr);
-        System.out.println("TUITION BALANCE: " + tuitionBalance);
+        System.out.println("COURSES YOU ARE ENROLLED IN: " + courseStr);
+        System.out.println("\nTUITION BALANCE: " + tuitionBalance);
 
 
 
