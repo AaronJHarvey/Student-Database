@@ -1,3 +1,7 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Student {
@@ -5,10 +9,11 @@ public class Student {
     private String lastName;
     private int gradeYear;
     private int studentId;
-    private String courses;
+    private Array courses;
     private int tuitionBalance;
     private static int costOfCourse = 600;
     private static int id = 1000;
+
 
     // Constructor prompt user to enter Student's name and year 
     public Student() {
@@ -40,6 +45,75 @@ public class Student {
     }
 
     // Enroll in courses
+
+    public void enroll() {
+        // Enter a loop, user hits 0 when finished 
+        ArrayList<String> enrolledCourses = new ArrayList<String>();
+        String course;
+        
+        do {
+            System.out.print("Enter course to enroll (Q for quit): ");
+            Scanner in = new Scanner(System.in);
+            course = in.nextLine();
+            switch (course) {
+                case "History 101":
+                    if (enrolledCourses.contains(course)) {
+                    System.out.println("You are already enrolled in that course. ");
+                } else {
+                    enrolledCourses.add(course);
+                    System.out.println("    Course Added Successfully!");
+                };
+                    break;
+                case "Mathematics 101":
+                    if (enrolledCourses.contains(course)) {
+                    System.out.println("You are already enrolled in that course. ");
+                } else {
+                    enrolledCourses.add(course);
+                    System.out.println("    Course Added Successfully!");
+                };
+                    break;
+                case "English 101":
+                if (enrolledCourses.contains(course)) {
+                    System.out.println("You are already enrolled in that course. ");
+                } else {
+                    enrolledCourses.add(course);
+                    System.out.println("    Course Added Successfully!");
+                };
+                    break;
+                case "Chemistry 101":
+                if (enrolledCourses.contains(course)) {
+                    System.out.println("You are already enrolled in that course. ");
+                } else {
+                    enrolledCourses.add(course);
+                    System.out.println("    Course Added Successfully!");
+                };
+                    break;
+                case "Computer Science 101":
+                if (enrolledCourses.contains(course)) {
+                    System.out.println("You are already enrolled in that course. ");
+                } else {
+                    enrolledCourses.add(course);
+                    System.out.println("    Course Added Successfully!");
+                };
+                    break;
+                case "Q":
+                    break;
+                default:
+                    System.out.print("Invalid Entry! Please Try Again \n");
+            }
+        } while (!course.equals("Q"));
+
+        String[] courses = enrolledCourses.toArray(new String[0]);
+        String courseStr = Arrays.toString(courses);
+        courseStr = courseStr.replaceAll("\\[", "").replaceAll("\\]","").replaceAll(", ","\n");
+        tuitionBalance = costOfCourse * courses.length;
+        
+        System.out.println(courseStr);
+        System.out.println("TUITION BALANCE: " + tuitionBalance);
+
+
+
+    }
 
     // View Balance 
 

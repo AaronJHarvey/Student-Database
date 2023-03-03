@@ -2,7 +2,8 @@ public class StudentDatabaseApp {
 
     public static void main(String[] args) {
         Student stu1 = new Student();
-        Student stu2 = new Student();
+        stu1.enroll();
+        
     }
     // Ask how many students should be created 
 
