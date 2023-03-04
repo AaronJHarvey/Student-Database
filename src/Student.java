@@ -120,6 +120,61 @@ public class Student {
     }
 
     // Pay tuition
+    public void payTuition() {
+        int payment;
+        Scanner in = new Scanner(System.in);
+
+
+        // when we enter the paytuition we want to start a loop that goes until payment entered is 0
+        // do{ something}
+        // while payment != 0
+    // In the loop: 
+        // Output current balance and ask user how much they wish to pay - input 0 to exit
+        // Open a scanner
+            // Set payment = to input
+        // If payment <= tutionBalance, make new tuitionBalance = old balance - payment
+
+        do {
+        
+            if (tuitionBalance == 0) {
+                System.out.println("Your current Balance is $" + tuitionBalance + ". No Payment can be made at this time.");
+                payment = 0;
+            } else {
+                System.out.println("Your current balance is: $" + tuitionBalance
+                        + ". How Much do you want to pay? (Input 0 to cancel making a payment)");
+                Scanner scan = new Scanner(System.in);
+                payment = scan.nextInt();
+
+                if (payment == 0) {
+                    break;
+                } else if (payment <= tuitionBalance) {
+                    System.out.print("You made a payment of $" + payment + ". Your new balance is $"
+                            + (tuitionBalance -= payment) + "\n");
+                } else {
+                    System.out.println("Invalid Payment. Please make a payment of or below $" + tuitionBalance);
+                }
+            }
+        
+        } while (payment != 0);
+    
+}
+    
+        //    do {
+    //         if (tuitionBalance > 0) {
+    //             Scanner in = new Scanner(System.in);
+    //             int payment = in.nextInt();
+    //         if (payment <= tuitionBalance){
+    //             System.out.println("You paid: $" + payment + ". Your new Balance is: $" + (tuitionBalance - payment));
+    //         } else {
+    //             System.out.println("Payment may not be more than your current balance of $" +tuitionBalance);
+    //         }
+    //     } 
+    // }
+
+    
+
+
+
 
     // Show Status (name, Id, courses, balance)
 

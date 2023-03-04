@@ -4,6 +4,7 @@ public class StudentDatabaseApp {
         Student stu1 = new Student();
         stu1.enroll();
         stu1.viewBalance();
+        stu1.payTuition();
         
     }
     // Ask how many students should be created 
