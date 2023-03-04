@@ -48,7 +48,8 @@ public class Student {
     public void enroll() {
         // Enter a loop, user hits 0 when finished 
         ArrayList<String> enrolledCourses = new ArrayList<String>();
-        
+        String course;
+
         do {
             System.out.print("Enter course to enroll (Q for quit): ");
             Scanner in = new Scanner(System.in);
@@ -114,6 +115,9 @@ public class Student {
     }
 
     // View Balance 
+    public void viewBalance() {
+        System.out.println("Your balance is: $" + tuitionBalance);
+    }
 
     // Pay tuition
 
