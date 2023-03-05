@@ -122,14 +122,12 @@ public class Student {
     // Pay tuition
     public void payTuition() {
         int payment;
-        Scanner in = new Scanner(System.in);
-
         do {
         
             if (tuitionBalance == 0) {
                 System.out.println("Your current Balance is $" + tuitionBalance + ". No Payment can be made at this time.");
                 payment = 0;
-                in.close();
+
             } else {
                 System.out.println("Your current balance is: $" + tuitionBalance
                         + ". How Much do you want to pay? (Input 0 to cancel making a payment)");
@@ -138,7 +136,7 @@ public class Student {
 
 
                 if (payment == 0) {
-
+                    scan.close();
                     break;
 
                 } else if (payment <= tuitionBalance) {
