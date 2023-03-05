@@ -129,22 +129,23 @@ public class Student {
             if (tuitionBalance == 0) {
                 System.out.println("Your current Balance is $" + tuitionBalance + ". No Payment can be made at this time.");
                 payment = 0;
+                in.close();
             } else {
                 System.out.println("Your current balance is: $" + tuitionBalance
                         + ". How Much do you want to pay? (Input 0 to cancel making a payment)");
                 Scanner scan = new Scanner(System.in);
                 payment = scan.nextInt();
-               
+
 
                 if (payment == 0) {
-                    scan.close();
+
                     break;
 
                 } else if (payment <= tuitionBalance) {
                     System.out.print("You made a payment of $" + payment + ". Your new balance is $"
                             + (tuitionBalance -= payment) + "\n");
                 } else {
-                    System.out.println("Invalid Payment. Please make a payment of or below $" + tuitionBalance);
+                    System.out.println("Invalid Payment amount. Please make a payment of or below $" + tuitionBalance);
                 }
             }
         
