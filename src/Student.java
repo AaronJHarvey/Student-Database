@@ -8,10 +8,11 @@ public class Student {
     private String lastName;
     private int gradeYear;
     private int studentId;
-    private Array courses;
+    private String[] courses;
     private int tuitionBalance;
     private static int costOfCourse = 600;
     private static int id = 1000;
+    private String courseStr = Arrays.toString(courses);
 
 
     // Constructor prompt user to enter Student's name and year 
@@ -102,13 +103,10 @@ public class Student {
             }
         } while (!course.equals("Q"));
 
-        String[] courses = enrolledCourses.toArray(new String[0]);
-        String courseStr = Arrays.toString(courses);
-        courseStr = courseStr.replaceAll("\\[", "").replaceAll("\\]","").replaceAll(", ","\n");
+        courses = enrolledCourses.toArray(new String[0]);
+        courseStr = Arrays.toString(courses);
         tuitionBalance = costOfCourse * courses.length;
         
-        System.out.println("COURSES YOU ARE ENROLLED IN: " + courseStr);
-        System.out.println("\nTUITION BALANCE: " + tuitionBalance);
 
 
 
@@ -156,7 +154,12 @@ public class Student {
 
 
 
-    // Show Status (name, Id, courses, balance)
-
+// Show Status (name, Id, courses, balance)
+public void showInfo() {
+    courseStr = courseStr.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll(", ", " \n ");
+    System.out.print("Name: " + firstName + " " + lastName + "\n");
+    System.out.print("Courses Enrolled: " + "\n " + courseStr + "\n");
+    System.out.print("Balance: $" + tuitionBalance +"\n");
+    }
 
 }
