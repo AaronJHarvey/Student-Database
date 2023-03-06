@@ -110,6 +110,7 @@ public class Student {
 
 
 
+
     }
 
     // View Balance 
@@ -134,7 +135,6 @@ public class Student {
 
 
                 if (payment == 0) {
-                    scan.close();
                     break;
 
                 } else if (payment <= tuitionBalance) {
@@ -158,6 +158,7 @@ public class Student {
 public void showInfo() {
     courseStr = courseStr.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll(", ", " \n ");
     System.out.print("Name: " + firstName + " " + lastName + "\n");
+    System.out.print("Student ID: " + studentId  + "\n");
     System.out.print("Courses Enrolled: " + "\n " + courseStr + "\n");
     System.out.print("Balance: $" + tuitionBalance +"\n");
     }
